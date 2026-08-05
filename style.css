@@ -1,0 +1,297 @@
+/* Visionframe — shared styles
+   Palette and type are defined once here. Change these values to restyle the whole site. */
+
+:root {
+  --abyss:   #04121a;
+  --hull:    #0b2431;
+  --shelf:   #123245;
+  --amber:   #e8933a;
+  --scan:    #5fd4e8;
+  --foam:    #e7eff2;
+  --muted:   #82a0ad;
+
+  --measure: 68ch;
+  --rail: 76px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--abyss);
+  color: var(--foam);
+  font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Depth rail: the signature element ----------
+   A sonar depth scale runs down the left edge of every page. */
+
+.rail {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: var(--rail);
+  border-right: 1px solid rgba(95, 212, 232, 0.16);
+  background: linear-gradient(180deg, var(--hull), var(--abyss) 70%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 0 24px;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  z-index: 10;
+}
+
+.rail span {
+  display: block;
+  text-align: right;
+  padding-right: 10px;
+  position: relative;
+}
+
+.rail span::after {
+  content: "";
+  position: absolute;
+  right: 0; top: 50%;
+  width: 8px;
+  height: 1px;
+  background: rgba(95, 212, 232, 0.4);
+}
+
+/* ---------- Layout ---------- */
+
+.page {
+  margin-left: var(--rail);
+  padding: 0 40px 96px;
+}
+
+.wrap {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  align-items: baseline;
+  gap: 28px;
+  padding: 26px 0 0;
+  flex-wrap: wrap;
+}
+
+nav .mark {
+  font-family: "Archivo", system-ui, sans-serif;
+  font-weight: 800;
+  font-stretch: 112%;
+  letter-spacing: -0.02em;
+  font-size: 19px;
+  color: var(--foam);
+  text-decoration: none;
+  margin-right: auto;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover, nav a:focus-visible { color: var(--scan); }
+
+/* ---------- Hero ---------- */
+
+.hero { padding: 76px 0 64px; }
+
+.eyebrow {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--scan);
+  margin: 0 0 20px;
+}
+
+h1 {
+  font-family: "Archivo", system-ui, sans-serif;
+  font-weight: 800;
+  font-stretch: 115%;
+  font-size: clamp(2.4rem, 6.5vw, 4.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  margin: 0 0 24px;
+  max-width: 16ch;
+}
+
+h1 em { font-style: normal; color: var(--amber); }
+
+.lede {
+  font-size: 1.22rem;
+  color: var(--muted);
+  max-width: 54ch;
+  margin: 0 0 36px;
+}
+
+/* ---------- Sonar canvas ---------- */
+
+.sonar {
+  width: 100%;
+  height: 190px;
+  display: block;
+  border: 1px solid rgba(95, 212, 232, 0.18);
+  background: #061a24;
+  margin: 8px 0 0;
+}
+
+.sonar-caption {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  margin: 10px 0 0;
+}
+
+/* ---------- Sections ---------- */
+
+section { padding: 56px 0; border-top: 1px solid rgba(130, 160, 173, 0.16); }
+
+h2 {
+  font-family: "Archivo", system-ui, sans-serif;
+  font-weight: 700;
+  font-stretch: 110%;
+  font-size: 1.7rem;
+  letter-spacing: -0.02em;
+  margin: 0 0 20px;
+}
+
+h3 {
+  font-family: "Archivo", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 0 0 8px;
+}
+
+p { max-width: var(--measure); }
+
+a { color: var(--scan); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.card {
+  background: var(--hull);
+  border: 1px solid rgba(95, 212, 232, 0.14);
+  padding: 24px;
+}
+
+.card p { color: var(--muted); font-size: 0.95rem; margin: 0; }
+
+/* ---------- Price ---------- */
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 0 0 8px;
+}
+
+.price .amount {
+  font-family: "Archivo", system-ui, sans-serif;
+  font-weight: 800;
+  font-stretch: 115%;
+  font-size: 3rem;
+  letter-spacing: -0.03em;
+  color: var(--amber);
+}
+
+.price .terms {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.buy {
+  display: inline-block;
+  margin: 22px 0 0;
+  padding: 15px 30px;
+  background: var(--amber);
+  color: var(--abyss);
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid var(--amber);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.buy:hover, .buy:focus-visible {
+  background: transparent;
+  color: var(--amber);
+}
+
+/* ---------- Legal pages ---------- */
+
+.legal { padding-top: 56px; }
+
+.legal h1 {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  max-width: 22ch;
+  margin-bottom: 8px;
+}
+
+.legal .updated {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  margin: 0 0 40px;
+}
+
+.legal h2 { font-size: 1.25rem; margin-top: 42px; }
+
+.legal ul { max-width: var(--measure); color: var(--foam); }
+
+.legal li { margin-bottom: 8px; }
+
+/* ---------- Footer ---------- */
+
+footer {
+  border-top: 1px solid rgba(130, 160, 173, 0.16);
+  padding: 34px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+footer .org { margin-right: auto; }
+
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover, footer a:focus-visible { color: var(--scan); }
+
+/* ---------- Accessibility and small screens ---------- */
+
+:focus-visible {
+  outline: 2px solid var(--scan);
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .rail { display: none; }
+  .page { margin-left: 0; padding: 0 20px 72px; }
+  body { font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
