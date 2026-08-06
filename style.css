@@ -159,12 +159,14 @@ h1 em { font-style: normal; color: var(--brand); }
 
 /* ---------- Hero logotype and still image ---------- */
 
-/* The full lockup, wordmark included, used once at the top of the home page. */
+/* The full lockup, wordmark included, used once at the top of the home page.
+   Kept close to the cap height of the eyebrow-and-heading block beneath it,
+   so it reads as part of the same column rather than as a banner. */
 .hero-logo {
-  width: clamp(148px, 20vw, 208px);
+  width: clamp(96px, 9vw, 116px);
   height: auto;
   display: block;
-  margin: 0 0 34px;
+  margin: 0 0 28px;
 }
 
 .still {
@@ -325,7 +327,7 @@ footer a:hover, footer a:focus-visible { color: var(--brand-lift); }
   nav .mark { flex-basis: 100%; margin-right: 0; }
 
   .hero { padding: 44px 0 48px; }
-  .hero-logo { width: 128px; margin-bottom: 26px; }
+  .hero-logo { width: 92px; margin-bottom: 22px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
