@@ -154,8 +154,12 @@ h1 em { font-style: normal; color: var(--brand); }
   font-size: 1.22rem;
   color: var(--muted);
   max-width: 54ch;
-  margin: 0 0 36px;
+  margin: 0 0 20px;
 }
+
+/* The hero can carry more than one lede paragraph; only the last one needs
+   to open up a gap before whatever follows it. */
+.hero p:last-of-type { margin-bottom: 40px; }
 
 /* ---------- Hero logotype and still image ---------- */
 
