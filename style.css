@@ -105,14 +105,18 @@ nav .mark img {
   display: block;
 }
 
+/* VISION bold against FRAME regular, the same weight contrast the wordmark
+   in the logotype uses. */
 nav .mark span {
   font-family: "Archivo", system-ui, sans-serif;
-  font-weight: 800;
+  font-weight: 400;
   font-stretch: 112%;
   letter-spacing: -0.02em;
   font-size: 19px;
   color: var(--foam);
 }
+
+nav .mark b { font-weight: 800; }
 
 nav .mark:hover span, nav .mark:focus-visible span { color: var(--brand-lift); }
 
@@ -145,7 +149,7 @@ h1 {
   line-height: 0.98;
   letter-spacing: -0.03em;
   margin: 0 0 24px;
-  max-width: 16ch;
+  max-width: 21ch;
 }
 
 h1 em { font-style: normal; color: var(--brand); }
