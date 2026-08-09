@@ -30,8 +30,8 @@
     <!-- Circuit stems: three short drops of equal length, all of them clear
          of the V. The centre one hangs in the notch, dot uppermost; the
          outer two hang just outside each arm, dots level with each other. -->
-    <g stroke="url(#vf-stem)" fill="url(#vf-dot)" stroke-width="9">
-      <line x1="160" y1="62" x2="160" y2="118"/>
+    <g stroke="url(#vf-stem)" fill="url(#vf-dot)" stroke-width="9" stroke-linecap="round">
+      <line x1="160" y1="62" x2="160" y2="114"/>
       <circle cx="160" cy="48" r="14" stroke="none"/>
     </g>
 
@@ -48,10 +48,10 @@
     <path fill="#000000" fill-opacity="0.16"
           d="M 16,22 L 40,22 L 160,274 L 142,286 Z"/>
 
-    <g stroke="url(#vf-stem)" fill="url(#vf-dot)" stroke-width="9">
-      <line x1="76" y1="164" x2="76" y2="220"/>
+    <g stroke="url(#vf-stem)" fill="url(#vf-dot)" stroke-width="9" stroke-linecap="round">
+      <line x1="76" y1="168" x2="76" y2="220"/>
       <circle cx="76" cy="234" r="14" stroke="none"/>
-      <line x1="244" y1="164" x2="244" y2="220"/>
+      <line x1="244" y1="168" x2="244" y2="220"/>
       <circle cx="244" cy="234" r="14" stroke="none"/>
     </g>
   </g>
