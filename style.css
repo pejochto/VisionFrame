@@ -2,24 +2,27 @@
    Palette and type are defined once here. Change these values to restyle the whole site. */
 
 :root {
-  /* Brand: the cyan-to-violet gradient of the VisionFrame mark, sampled from
-     the logotype. Solid accents pick an end of the ramp; anything large enough
-     to carry it uses --brand-grad, so page and logotype read as one thing. */
-  --cyan:   #1cbee8;
-  --mid:    #6a99eb;
-  --violet: #ba74ec;
-  --brand-grad: linear-gradient(135deg, var(--cyan), var(--mid) 50%, var(--violet));
+  /* Brand: the blue-to-cyan ramp of the VisionFrame mark, sampled from the V
+     itself — deep blue at the top of the left arm, cyan at the tip of the
+     right one. Solid accents pick a point on the ramp; anything large enough
+     to carry it uses --brand-grad, so page and mark read as one thing. */
+  --deep: #1d34c4;
+  --blue: #2a63dc;
+  --cyan: #25e8de;
+  --brand-grad: linear-gradient(135deg, var(--deep), var(--blue) 42%, var(--cyan));
 
-  --brand:      var(--mid);      /* solid stand-in where a gradient can't go */
-  --brand-lift: #7cc9f2;         /* lighter cyan, for links and small text on dark */
-  --brand-deep: #2a2352;
+  --brand:      var(--blue);     /* solid stand-in where a gradient can't go */
+  --brand-lift: #45c8f0;         /* the wordmark cyan: links and small text */
+  --brand-node: #2c6ee2;         /* the circuit dots in the mark */
 
-  /* Neutrals lean indigo rather than teal, to sit under the new gradient. */
-  --abyss:   #080a18;
-  --hull:    #121430;
-  --shelf:   #1b1c3d;
-  --foam:    #edeefa;
-  --muted:   #9a9cc0;
+  /* Neutrals sit on the black the logo is drawn against, lifted just enough
+     for panels to separate from the page. */
+  --abyss:   #000000;
+  --hull:    #070a14;
+  --shelf:   #0c1120;
+  --line:    rgba(42, 99, 220, 0.26);
+  --foam:    #e9f2ff;
+  --muted:   #93a6c6;
 
   --measure: 68ch;
   --rail: 76px;
@@ -32,8 +35,8 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background:
-    radial-gradient(900px 520px at 10% -6%, rgba(28, 190, 232, 0.11), transparent 70%),
-    radial-gradient(900px 620px at 90% 14%, rgba(186, 116, 236, 0.11), transparent 70%),
+    radial-gradient(880px 520px at 8% -8%, rgba(42, 99, 220, 0.20), transparent 68%),
+    radial-gradient(820px 620px at 96% 10%, rgba(35, 172, 232, 0.13), transparent 66%),
     var(--abyss);
   background-attachment: fixed;
   color: var(--foam);
@@ -50,7 +53,7 @@ body {
   position: fixed;
   top: 0; left: 0; bottom: 0;
   width: var(--rail);
-  background: linear-gradient(180deg, var(--hull), var(--abyss) 70%);
+  background: linear-gradient(180deg, #06090f, var(--abyss) 72%);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -67,8 +70,8 @@ body {
   position: absolute;
   top: 0; right: 0; bottom: 0;
   width: 1px;
-  background: var(--brand-grad);
-  opacity: 0.55;
+  background: linear-gradient(180deg, var(--deep), var(--blue) 45%, var(--cyan));
+  opacity: 0.7;
 }
 
 .rail span {
@@ -84,7 +87,7 @@ body {
   right: 0; top: 50%;
   width: 8px;
   height: 1px;
-  background: rgba(28, 190, 232, 0.55);
+  background: rgba(69, 200, 240, 0.6);
 }
 
 /* ---------- Layout ---------- */
@@ -101,43 +104,41 @@ body {
 
 nav {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 28px;
-  padding: 26px 0 0;
+  padding: 22px 0 20px;
   flex-wrap: wrap;
+  border-bottom: 1px solid rgba(42, 99, 220, 0.18);
 }
 
-/* The nav mark is the logotype itself: the eye symbol without its wordmark,
-   set beside the name so it stays legible at small sizes. */
+/* The nav mark is the logotype itself: the V without its wordmark, set beside
+   the name so it stays legible at small sizes. */
 
 nav .mark {
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: 10px;
   text-decoration: none;
   margin-right: auto;
 }
 
 nav .mark img {
   width: 34px;
-  height: auto;
+  height: 34px;
   display: block;
 }
 
-/* VISION bold against FRAME regular, the same weight contrast the wordmark
-   in the logotype uses. */
+/* The wordmark is set in one colour, the way the logotype sets it. */
 nav .mark span {
   font-family: "Archivo", system-ui, sans-serif;
-  font-weight: 400;
-  font-stretch: 112%;
-  letter-spacing: -0.02em;
-  font-size: 19px;
-  color: var(--foam);
+  font-weight: 500;
+  font-stretch: 105%;
+  letter-spacing: -0.015em;
+  font-size: 20px;
+  color: var(--brand-lift);
 }
 
-nav .mark b { font-weight: 800; }
-
-nav .mark:hover span, nav .mark:focus-visible span { color: var(--brand-lift); }
+nav .mark:hover span, nav .mark:focus-visible span { color: var(--cyan); }
 
 nav a {
   color: var(--muted);
@@ -149,7 +150,7 @@ nav a:hover, nav a:focus-visible { color: var(--brand-lift); }
 
 /* ---------- Hero ---------- */
 
-.hero { padding: 76px 0 64px; }
+.hero { padding: 72px 0 64px; }
 
 .eyebrow {
   font-family: "IBM Plex Mono", ui-monospace, monospace;
@@ -186,22 +187,53 @@ h1 em { font-style: normal; color: var(--brand-lift); }
 
 /* ---------- Hero logotype and still image ---------- */
 
-/* The full lockup, wordmark included, used once at the top of the home page.
-   Kept close to the cap height of the eyebrow-and-heading block beneath it,
-   so it reads as part of the same column rather than as a banner. */
-.hero-logo {
-  width: clamp(96px, 9vw, 116px);
-  height: auto;
+/* The full lockup: the mark with the wordmark set beneath it, exactly as the
+   logotype stacks them, but built from live type so it matches the nav.
+   Used once, at the top of the home page. */
+.lockup {
+  display: inline-block;
+  margin: 0 0 34px;
+  position: relative;
+}
+
+.lockup::before {
+  content: "";
+  position: absolute;
+  left: 50%; top: 6%;
+  width: 240px; height: 240px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(42, 99, 220, 0.30), transparent 66%);
+  pointer-events: none;
+}
+
+.lockup img {
+  position: relative;
   display: block;
-  margin: 0 0 28px;
+  width: clamp(126px, 13.5vw, 168px);
+  height: auto;
+  margin: 0 auto;
+}
+
+.lockup .wordmark {
+  position: relative;
+  display: block;
+  font-family: "Archivo", system-ui, sans-serif;
+  font-weight: 500;
+  font-stretch: 105%;
+  font-size: clamp(1.8rem, 3.8vw, 2.45rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: var(--brand-lift);
+  margin-top: 2px;
 }
 
 .still {
   width: 100%;
   height: auto;
   display: block;
-  border: 1px solid rgba(106, 153, 235, 0.30);
-  background: #0b0c1c;
+  border: 1px solid var(--line);
+  background: #04060f;
   margin: 8px 0 0;
 }
 
@@ -215,7 +247,7 @@ h1 em { font-style: normal; color: var(--brand-lift); }
 
 /* ---------- Sections ---------- */
 
-section { padding: 56px 0; border-top: 1px solid rgba(154, 156, 192, 0.18); }
+section { padding: 56px 0; border-top: 1px solid rgba(42, 99, 220, 0.20); }
 
 h2 {
   font-family: "Archivo", system-ui, sans-serif;
@@ -245,9 +277,10 @@ a { color: var(--brand-lift); }
 
 .card {
   position: relative;
-  background: var(--hull);
-  border: 1px solid rgba(106, 153, 235, 0.20);
+  background: linear-gradient(180deg, var(--shelf), var(--hull));
+  border: 1px solid var(--line);
   padding: 24px;
+  transition: border-color 0.15s ease, transform 0.15s ease;
 }
 
 .card::before {
@@ -256,6 +289,11 @@ a { color: var(--brand-lift); }
   left: 0; right: 0; top: 0;
   height: 2px;
   background: var(--brand-grad);
+}
+
+.card:hover {
+  border-color: rgba(69, 200, 240, 0.45);
+  transform: translateY(-2px);
 }
 
 .card p { color: var(--muted); font-size: 0.95rem; margin: 0; }
@@ -275,7 +313,7 @@ a { color: var(--brand-lift); }
   font-stretch: 115%;
   font-size: 3rem;
   letter-spacing: -0.03em;
-  color: var(--brand);
+  color: var(--brand-lift);
 }
 
 .price .terms {
@@ -291,7 +329,7 @@ a { color: var(--brand-lift); }
   margin: 22px 0 0;
   padding: 15px 30px;
   background: var(--brand-grad);
-  color: #08091a;
+  color: #00040c;
   font-weight: 700;
   text-decoration: none;
   border: 1px solid transparent;
@@ -300,7 +338,7 @@ a { color: var(--brand-lift); }
 
 .buy:hover, .buy:focus-visible {
   background: none;
-  border-color: var(--mid);
+  border-color: var(--brand);
   color: var(--brand-lift);
 }
 
@@ -309,7 +347,7 @@ a { color: var(--brand-lift); }
    for engines without background-clip: text. */
 @supports (background-clip: text) or (-webkit-background-clip: text) {
   h1 em, .price .amount {
-    background: var(--brand-grad);
+    background: linear-gradient(120deg, var(--blue), var(--cyan));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -342,7 +380,7 @@ a { color: var(--brand-lift); }
 /* ---------- Footer ---------- */
 
 footer {
-  border-top: 1px solid rgba(154, 156, 192, 0.18);
+  border-top: 1px solid rgba(42, 99, 220, 0.20);
   padding: 34px 0 0;
   font-size: 14px;
   color: var(--muted);
@@ -375,7 +413,9 @@ footer a:hover, footer a:focus-visible { color: var(--brand-lift); }
   nav .mark { flex-basis: 100%; margin-right: 0; }
 
   .hero { padding: 44px 0 48px; }
-  .hero-logo { width: 92px; margin-bottom: 22px; }
+  .lockup { margin-bottom: 26px; }
+  .lockup img { width: 112px; }
+  .lockup::before { width: 170px; height: 170px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
