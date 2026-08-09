@@ -10,14 +10,29 @@
       <stop offset="62%"  stop-color="#23bce8"/>
       <stop offset="100%" stop-color="#28f2e2"/>
     </linearGradient>
+    <!-- The stems carry the ramp too. The lines are lit in user space, so a
+         zero-width vertical line still picks the gradient up; each dot is
+         shaded on its own box, which rounds it off the way the mark does. -->
+    <linearGradient id="vf-stem" gradientUnits="userSpaceOnUse"
+                    x1="60" y1="34" x2="262" y2="248">
+      <stop offset="0%"   stop-color="#5b9cf2"/>
+      <stop offset="52%"  stop-color="#2c6ee2"/>
+      <stop offset="100%" stop-color="#1c40cc"/>
+    </linearGradient>
+    <linearGradient id="vf-dot" x1="0.15" y1="0" x2="0.75" y2="1">
+      <stop offset="0%"   stop-color="#63a5f5"/>
+      <stop offset="55%"  stop-color="#2f70e4"/>
+      <stop offset="100%" stop-color="#1b3fca"/>
+    </linearGradient>
   </defs>
 
   <g transform="translate(0,14)">
-    <!-- Circuit stems. The centre one hangs into the notch of the V; the
-         outer two run down through the arms and end on the ground colour. -->
-    <g stroke="#2c6ee2" fill="#2c6ee2" stroke-width="9">
-      <line x1="160" y1="58" x2="160" y2="142"/>
-      <circle cx="160" cy="52" r="15" stroke="none"/>
+    <!-- Circuit stems: three short drops of equal length, all of them clear
+         of the V. The centre one hangs in the notch, dot uppermost; the
+         outer two hang just outside each arm, dots level with each other. -->
+    <g stroke="url(#vf-stem)" fill="url(#vf-dot)" stroke-width="9" stroke-linecap="round">
+      <line x1="160" y1="62" x2="160" y2="114"/>
+      <circle cx="160" cy="48" r="14" stroke="none"/>
     </g>
 
     <!-- The V: one closed path, left arm and right arm sharing a vertex. -->
@@ -27,17 +42,24 @@
     <!-- A slit near the outer edge of the right arm splits a thin sliver off
          it, the way the mark does at large sizes. -->
     <path fill="none" stroke="#000000" stroke-width="9"
-          d="M 285,26 L 222,158"/>
+          d="M 287,18 L 222,158"/>
 
     <!-- The left arm reads a shade deeper along its outer edge. -->
     <path fill="#000000" fill-opacity="0.16"
           d="M 16,22 L 40,22 L 160,274 L 142,286 Z"/>
 
-    <g stroke="#2c6ee2" fill="#2c6ee2" stroke-width="9">
-      <line x1="96" y1="152" x2="96" y2="230"/>
-      <circle cx="96" cy="244" r="15" stroke="none"/>
-      <line x1="224" y1="160" x2="224" y2="230"/>
-      <circle cx="224" cy="244" r="15" stroke="none"/>
+    <!-- The two outer stems face an arm, so their top ends are phased: cut on
+         the same slope as the arm beside them, which holds the gap between
+         stem and V even across the whole end. Drawn as filled bars rather
+         than strokes, since a cap can only be square or round. The lower ends
+         run on into the dots, where the cut does not show. -->
+    <g fill="url(#vf-stem)">
+      <path d="M 71.5,159 L 80.5,178 L 80.5,230 L 71.5,230 Z"/>
+      <path d="M 248.5,159 L 239.5,178 L 239.5,230 L 248.5,230 Z"/>
+    </g>
+    <g fill="url(#vf-dot)">
+      <circle cx="76" cy="234" r="14"/>
+      <circle cx="244" cy="234" r="14"/>
     </g>
   </g>
 </svg>
