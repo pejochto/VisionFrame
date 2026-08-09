@@ -48,11 +48,18 @@
     <path fill="#000000" fill-opacity="0.16"
           d="M 16,22 L 40,22 L 160,274 L 142,286 Z"/>
 
-    <g stroke="url(#vf-stem)" fill="url(#vf-dot)" stroke-width="9" stroke-linecap="round">
-      <line x1="76" y1="168" x2="76" y2="220"/>
-      <circle cx="76" cy="234" r="14" stroke="none"/>
-      <line x1="244" y1="168" x2="244" y2="220"/>
-      <circle cx="244" cy="234" r="14" stroke="none"/>
+    <!-- The two outer stems face an arm, so their top ends are phased: cut on
+         the same slope as the arm beside them, which holds the gap between
+         stem and V even across the whole end. Drawn as filled bars rather
+         than strokes, since a cap can only be square or round. The lower ends
+         run on into the dots, where the cut does not show. -->
+    <g fill="url(#vf-stem)">
+      <path d="M 71.5,159 L 80.5,178 L 80.5,230 L 71.5,230 Z"/>
+      <path d="M 248.5,159 L 239.5,178 L 239.5,230 L 248.5,230 Z"/>
+    </g>
+    <g fill="url(#vf-dot)">
+      <circle cx="76" cy="234" r="14"/>
+      <circle cx="244" cy="234" r="14"/>
     </g>
   </g>
 </svg>
