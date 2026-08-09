@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -6 320 320" width="320" height="320"
+     role="img" aria-labelledby="mTitle">
+  <title id="mTitle">VisionFrame</title>
+  <!-- The mark on its own, centred in a square. -->
+  <defs>
+    <linearGradient id="mRamp" x1="0.04" y1="0.10" x2="0.96" y2="0.80">
+      <stop offset="0%" stop-color="#1d34c4"/>
+      <stop offset="30%" stop-color="#2a63dc"/>
+      <stop offset="62%" stop-color="#23bce8"/>
+      <stop offset="100%" stop-color="#28f2e2"/>
+    </linearGradient>
+    <linearGradient id="mStem" gradientUnits="userSpaceOnUse" x1="60" y1="20" x2="262" y2="234">
+      <stop offset="0%" stop-color="#5b9cf2"/>
+      <stop offset="52%" stop-color="#2c6ee2"/>
+      <stop offset="100%" stop-color="#1c40cc"/>
+    </linearGradient>
+    <linearGradient id="mDot" x1="0.15" y1="0" x2="0.75" y2="1">
+      <stop offset="0%" stop-color="#63a5f5"/>
+      <stop offset="55%" stop-color="#2f70e4"/>
+      <stop offset="100%" stop-color="#1b3fca"/>
+    </linearGradient>
+  </defs>
+  <g stroke="url(#mStem)" fill="url(#mDot)" stroke-width="9" stroke-linecap="round">
+    <line x1="160" y1="48" x2="160" y2="100"/>
+    <circle cx="160" cy="34" r="14" stroke="none"/>
+  </g>
+  <path fill="url(#mRamp)" fill-rule="evenodd"
+        d="M 16,22 L 74,22 L 160,204 L 246,22 L 304,22 L 178,286 L 142,286 Z
+           M 290.1,22 L 226.08,145.9 L 217.92,142.1 L 280.18,22 Z"/>
+  <path fill="#000000" fill-opacity="0.16" d="M 16,22 L 40,22 L 160,274 L 142,286 Z"/>
+  <g fill="url(#mStem)">
+    <path d="M 71.5,145 L 80.5,164 L 80.5,216 L 71.5,216 Z"/>
+    <path d="M 248.5,145 L 239.5,164 L 239.5,216 L 248.5,216 Z"/>
+  </g>
+  <g fill="url(#mDot)">
+    <circle cx="76" cy="220" r="14"/>
+    <circle cx="244" cy="220" r="14"/>
+  </g>
+</svg>
