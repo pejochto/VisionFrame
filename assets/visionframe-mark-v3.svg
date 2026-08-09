@@ -10,13 +10,27 @@
       <stop offset="62%"  stop-color="#23bce8"/>
       <stop offset="100%" stop-color="#28f2e2"/>
     </linearGradient>
+    <!-- The stems carry the ramp too. The lines are lit in user space, so a
+         zero-width vertical line still picks the gradient up; each dot is
+         shaded on its own box, which rounds it off the way the mark does. -->
+    <linearGradient id="vf-stem" gradientUnits="userSpaceOnUse"
+                    x1="60" y1="34" x2="262" y2="248">
+      <stop offset="0%"   stop-color="#5b9cf2"/>
+      <stop offset="52%"  stop-color="#2c6ee2"/>
+      <stop offset="100%" stop-color="#1c40cc"/>
+    </linearGradient>
+    <linearGradient id="vf-dot" x1="0.15" y1="0" x2="0.75" y2="1">
+      <stop offset="0%"   stop-color="#63a5f5"/>
+      <stop offset="55%"  stop-color="#2f70e4"/>
+      <stop offset="100%" stop-color="#1b3fca"/>
+    </linearGradient>
   </defs>
 
   <g transform="translate(0,14)">
     <!-- Circuit stems: three short drops of equal length, all of them clear
          of the V. The centre one hangs in the notch, dot uppermost; the
          outer two hang just outside each arm, dots level with each other. -->
-    <g stroke="#2c6ee2" fill="#2c6ee2" stroke-width="9">
+    <g stroke="url(#vf-stem)" fill="url(#vf-dot)" stroke-width="9">
       <line x1="160" y1="62" x2="160" y2="118"/>
       <circle cx="160" cy="48" r="14" stroke="none"/>
     </g>
@@ -34,7 +48,7 @@
     <path fill="#000000" fill-opacity="0.16"
           d="M 16,22 L 40,22 L 160,274 L 142,286 Z"/>
 
-    <g stroke="#2c6ee2" fill="#2c6ee2" stroke-width="9">
+    <g stroke="url(#vf-stem)" fill="url(#vf-dot)" stroke-width="9">
       <line x1="76" y1="164" x2="76" y2="220"/>
       <circle cx="76" cy="234" r="14" stroke="none"/>
       <line x1="244" y1="164" x2="244" y2="220"/>
