@@ -13,11 +13,12 @@
   </defs>
 
   <g transform="translate(0,14)">
-    <!-- Circuit stems. The centre one hangs into the notch of the V; the
-         outer two run down through the arms and end on the ground colour. -->
+    <!-- Circuit stems: three short drops of equal length, all of them clear
+         of the V. The centre one hangs in the notch, dot uppermost; the
+         outer two hang just outside each arm, dots level with each other. -->
     <g stroke="#2c6ee2" fill="#2c6ee2" stroke-width="9">
-      <line x1="160" y1="58" x2="160" y2="142"/>
-      <circle cx="160" cy="52" r="15" stroke="none"/>
+      <line x1="160" y1="62" x2="160" y2="118"/>
+      <circle cx="160" cy="48" r="14" stroke="none"/>
     </g>
 
     <!-- The V: one closed path, left arm and right arm sharing a vertex. -->
@@ -27,17 +28,17 @@
     <!-- A slit near the outer edge of the right arm splits a thin sliver off
          it, the way the mark does at large sizes. -->
     <path fill="none" stroke="#000000" stroke-width="9"
-          d="M 285,26 L 222,158"/>
+          d="M 287,18 L 222,158"/>
 
     <!-- The left arm reads a shade deeper along its outer edge. -->
     <path fill="#000000" fill-opacity="0.16"
           d="M 16,22 L 40,22 L 160,274 L 142,286 Z"/>
 
     <g stroke="#2c6ee2" fill="#2c6ee2" stroke-width="9">
-      <line x1="96" y1="152" x2="96" y2="230"/>
-      <circle cx="96" cy="244" r="15" stroke="none"/>
-      <line x1="224" y1="160" x2="224" y2="230"/>
-      <circle cx="224" cy="244" r="15" stroke="none"/>
+      <line x1="76" y1="164" x2="76" y2="220"/>
+      <circle cx="76" cy="234" r="14" stroke="none"/>
+      <line x1="244" y1="164" x2="244" y2="220"/>
+      <circle cx="244" cy="234" r="14" stroke="none"/>
     </g>
   </g>
 </svg>
