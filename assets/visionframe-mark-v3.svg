@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-16 -8 352 352" width="352" height="352"
+     role="img" aria-label="VisionFrame">
+  <defs>
+    <!-- The mark's ramp: deep blue at the top of the left arm, running to
+         cyan at the tip of the right one. Every gradient on the site is a
+         slice of this same ramp. -->
+    <linearGradient id="vf-mark" x1="0.04" y1="0.10" x2="0.96" y2="0.80">
+      <stop offset="0%"   stop-color="#1d34c4"/>
+      <stop offset="30%"  stop-color="#2a63dc"/>
+      <stop offset="62%"  stop-color="#23bce8"/>
+      <stop offset="100%" stop-color="#28f2e2"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(0,14)">
+    <!-- Circuit stems. The centre one hangs into the notch of the V; the
+         outer two run down through the arms and end on the ground colour. -->
+    <g stroke="#2c6ee2" fill="#2c6ee2" stroke-width="9">
+      <line x1="160" y1="58" x2="160" y2="142"/>
+      <circle cx="160" cy="52" r="15" stroke="none"/>
+    </g>
+
+    <!-- The V: one closed path, left arm and right arm sharing a vertex. -->
+    <path fill="url(#vf-mark)"
+          d="M 16,22 L 74,22 L 160,204 L 246,22 L 304,22 L 178,286 L 142,286 Z"/>
+
+    <!-- A slit near the outer edge of the right arm splits a thin sliver off
+         it, the way the mark does at large sizes. -->
+    <path fill="none" stroke="#000000" stroke-width="9"
+          d="M 285,26 L 222,158"/>
+
+    <!-- The left arm reads a shade deeper along its outer edge. -->
+    <path fill="#000000" fill-opacity="0.16"
+          d="M 16,22 L 40,22 L 160,274 L 142,286 Z"/>
+
+    <g stroke="#2c6ee2" fill="#2c6ee2" stroke-width="9">
+      <line x1="96" y1="152" x2="96" y2="230"/>
+      <circle cx="96" cy="244" r="15" stroke="none"/>
+      <line x1="224" y1="160" x2="224" y2="230"/>
+      <circle cx="224" cy="244" r="15" stroke="none"/>
+    </g>
+  </g>
+</svg>
