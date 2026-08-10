@@ -228,6 +228,14 @@ h1 em { font-style: normal; color: var(--brand-lift); }
   margin-top: 2px;
 }
 
+/* A trademark sign set at wordmark size would shout; lift it and shrink it so
+   it reads as a mark rather than a letter. */
+.lockup .wordmark .tm {
+  font-size: 0.38em;
+  vertical-align: 0.95em;
+  letter-spacing: 0;
+}
+
 .still {
   width: 100%;
   height: auto;
