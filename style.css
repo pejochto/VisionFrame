@@ -247,6 +247,7 @@ h1 em { font-style: normal; color: var(--brand-lift); }
   margin: 8px 0 0;
 }
 
+.videos figure { margin: 0; }
 .videos .video { margin: 0; }
 
 .video {
