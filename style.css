@@ -453,6 +453,19 @@ footer {
 
 footer .org { margin-right: auto; }
 
+/* Legal and safety notices sit on their own row above the copyright line. */
+footer .notices {
+  flex-basis: 100%;
+  max-width: var(--measure);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+footer .notices p { margin: 0 0 10px; }
+footer .notices p:last-child { margin-bottom: 0; }
+footer .notices strong { color: var(--foam); font-weight: 600; }
+
 footer a { color: var(--muted); text-decoration: none; }
 footer a:hover, footer a:focus-visible { color: var(--brand-lift); }
 
