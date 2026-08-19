@@ -456,6 +456,18 @@ a { color: var(--brand-lift); }
 .faq p { color: var(--muted); font-size: 0.95rem; margin: 0 0 10px; }
 .faq p:last-child { margin-bottom: 0; }
 
+.faq ul {
+  max-width: var(--measure);
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0 0 10px;
+  padding-left: 20px;
+}
+
+.faq li { margin-bottom: 8px; }
+.faq li:last-child { margin-bottom: 0; }
+.faq li strong { color: var(--foam); font-weight: 600; }
+
 /* ---------- Footer ---------- */
 
 footer {
