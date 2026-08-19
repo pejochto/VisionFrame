@@ -373,6 +373,36 @@ a { color: var(--brand-lift); }
   color: var(--brand-lift);
 }
 
+/* ---------- Christmas gift note ----------
+   Sits under the buy button: the sea rescue emblem beside the pledge, in the
+   same panel treatment as the cards so it reads as part of the price block. */
+
+.gift {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: var(--measure);
+  margin: 24px 0 0;
+  padding: 20px 22px;
+  background: linear-gradient(180deg, var(--shelf), var(--hull));
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--brand-lift);
+}
+
+.gift img {
+  flex: 0 0 auto;
+  width: 76px;
+  height: 76px;
+}
+
+.gift p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.gift strong { color: var(--foam); font-weight: 600; }
+
 /* Gradient text where the type is large enough to carry it. Declared after
    the rules it overrides, with a solid colour left in place as the fallback
    for engines without background-clip: text. */
@@ -447,6 +477,9 @@ footer a:hover, footer a:focus-visible { color: var(--brand-lift); }
   .lockup { margin-bottom: 26px; }
   .lockup img { width: 112px; }
   .lockup::before { width: 170px; height: 170px; }
+
+  /* Stack the emblem above the pledge so the text keeps a readable measure. */
+  .gift { flex-direction: column; align-items: flex-start; gap: 14px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
