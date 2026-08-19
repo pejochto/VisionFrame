@@ -239,6 +239,17 @@ h1 em { font-style: normal; color: var(--brand-lift); }
 
 /* A 16:9 embed that fills the content column and is framed like .still, so a
    video and a still image read as the same object at the same size. */
+/* Two demo clips sit side by side, stacking on narrow screens. */
+.videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  margin: 8px 0 0;
+}
+
+.videos figure { margin: 0; }
+.videos .video { margin: 0; }
+
 .video {
   position: relative;
   width: 100%;
