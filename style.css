@@ -438,6 +438,24 @@ a { color: var(--brand-lift); }
 
 .legal li { margin-bottom: 8px; }
 
+/* ---------- FAQ ---------- */
+
+.faq {
+  display: grid;
+  gap: 26px;
+  margin-top: 26px;
+}
+
+.faq article {
+  border-left: 2px solid var(--line);
+  padding-left: 20px;
+}
+
+.faq h3 { color: var(--foam); }
+
+.faq p { color: var(--muted); font-size: 0.95rem; margin: 0 0 10px; }
+.faq p:last-child { margin-bottom: 0; }
+
 /* ---------- Footer ---------- */
 
 footer {
