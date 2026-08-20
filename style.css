@@ -354,6 +354,39 @@ a { color: var(--brand-lift); }
   color: var(--brand-lift);
 }
 
+/* ---------- Try & Buy ----------
+   Sits directly under the buy button, in the same panel treatment as the
+   gift note: the reassurance line first, then the checkout link as a
+   secondary button so it does not compete with the primary buy call. */
+
+.trybuy {
+  max-width: var(--measure);
+  margin: 24px 0 0;
+  padding: 20px 22px;
+  background: linear-gradient(180deg, var(--shelf), var(--hull));
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--brand-lift);
+}
+
+.trybuy p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.buy.alt {
+  margin: 16px 0 0;
+  background: none;
+  border-color: var(--brand);
+  color: var(--brand-lift);
+}
+
+.buy.alt:hover, .buy.alt:focus-visible {
+  background: var(--brand-grad);
+  border-color: transparent;
+  color: #00040c;
+}
+
 /* ---------- Christmas gift note ----------
    Sits under the buy button: the sea rescue emblem beside the pledge, in the
    same panel treatment as the cards so it reads as part of the price block. */
