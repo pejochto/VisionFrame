@@ -355,36 +355,36 @@ a { color: var(--brand-lift); }
 }
 
 /* ---------- Try & Buy ----------
-   Sits directly under the buy button, in the same panel treatment as the
-   gift note: the reassurance line first, then the checkout link as a
-   secondary button so it does not compete with the primary buy call. */
+   A quiet footnote under the buy button, not a second call to action: no
+   panel, small type, and a compact outlined button so the primary buy
+   button keeps the weight in this section. */
 
 .trybuy {
   max-width: var(--measure);
-  margin: 24px 0 0;
-  padding: 20px 22px;
-  background: linear-gradient(180deg, var(--shelf), var(--hull));
-  border: 1px solid var(--line);
-  border-left: 2px solid var(--brand-lift);
+  margin: 14px 0 0;
 }
 
 .trybuy p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
   color: var(--muted);
 }
 
 .buy.alt {
-  margin: 16px 0 0;
+  margin: 10px 0 0;
+  padding: 7px 14px;
+  font-size: 0.78rem;
+  font-weight: 600;
   background: none;
-  border-color: var(--brand);
+  border-color: var(--line);
   color: var(--brand-lift);
 }
 
 .buy.alt:hover, .buy.alt:focus-visible {
-  background: var(--brand-grad);
-  border-color: transparent;
-  color: #00040c;
+  background: none;
+  border-color: var(--brand);
+  color: var(--foam);
 }
 
 /* ---------- Christmas gift note ----------
