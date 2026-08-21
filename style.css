@@ -470,7 +470,8 @@ a { color: var(--brand-lift); }
 .faq p { color: var(--muted); font-size: 0.95rem; margin: 0 0 10px; }
 .faq p:last-child { margin-bottom: 0; }
 
-.faq ul {
+.faq ul,
+.faq ol {
   max-width: var(--measure);
   color: var(--muted);
   font-size: 0.95rem;

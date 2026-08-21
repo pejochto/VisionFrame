@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=10">
+<link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 
@@ -114,6 +114,20 @@
         <h3>Why does Windows show a warning when I start the installation?</h3>
         <p>Windows SmartScreen shows a &ldquo;Windows protected your PC&rdquo; message for any program that is not signed with a paid code-signing certificate. Those certificates cost several hundred dollars a year, and passing that cost on would mean a higher price or a subscription. I would rather keep SonarDepthPro a single, affordable one-time purchase.</p>
         <p>The warning does not mean the file is unsafe. It only means the publisher has not paid to be pre-verified. To continue, click <strong>More info</strong> and then <strong>Run anyway</strong>. Only ever install the file you downloaded from the link in your purchase or trial email, and if anything looks wrong, email <a href="mailto:support@visionframe.se">support@visionframe.se</a> before you run it.</p>
+      </article>
+      <article>
+        <h3>Windows 11: &ldquo;Smart App Control&rdquo; may block the installer</h3>
+        <p>SonarDepthPro is not yet code-signed with a commercial certificate. On Windows 11 machines where Smart App Control is active, Windows may refuse to start the program. This is not a fault in the program or in your sonar files &mdash; Windows is blocking any application it does not yet recognise.</p>
+        <p>To allow SonarDepthPro to run:</p>
+        <ol>
+          <li>Open <strong>Windows Security</strong></li>
+          <li>Go to <strong>App &amp; browser control</strong></li>
+          <li>Open <strong>Smart App Control</strong> settings</li>
+          <li>Set Smart App Control to <strong>Off</strong></li>
+          <li>Run the installer again</li>
+        </ol>
+        <p>Most computers already have Smart App Control switched off, in which case you will never see this message. If the setting is not shown at all, it is not active on your machine and something else is the cause &mdash; please <a href="mailto:support@visionframe.se">get in touch</a>.</p>
+        <p><strong>Note:</strong> on Windows 11 versions older than April 2026, turning Smart App Control off cannot be undone without reinstalling Windows. Update Windows first if you would like to be able to switch it back on later.</p>
       </article>
       <article>
         <h3>Do I need an internet connection to use SonarDepthPro?</h3>
