@@ -467,6 +467,14 @@ a { color: var(--brand-lift); }
 
 .faq h3 { color: var(--foam); }
 
+.faq h4 {
+  font-family: "Archivo", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: var(--foam);
+  margin: 0 0 8px;
+}
+
 .faq p { color: var(--muted); font-size: 0.95rem; margin: 0 0 10px; }
 .faq p:last-child { margin-bottom: 0; }
 
